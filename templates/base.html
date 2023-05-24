@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>My Video App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+   {% block link %} {% endblock %}
+  </head>
+  <body>
+    <div class="topheader">
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+	  <li><a href="{{ url_for('select_how_many_words') }}">Struggling to come with video Ides?</a></li>
+          <li><a href="{{ url_for('most_common') }}" aria-haspopup="true">Words that get views on YouTube<i class="arrow down"></i></a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="{{ url_for('most_common') }}">Most Common</a></li>
+              <li><a href="{{ url_for('most_common') }}">Most Viewed</a></li>
+              <li><a href="{{ url_for('no_gaming') }}">No gaming (Most viewed)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/channel/UC2vlF85wQqYfI8AeLrjOiPg" target="_blank">Watch my channel</a></li>
+          <li><a href="{{ url_for('thumbnail_data') }}">Thumbnail Data</a></li>
+          <li><a href="{{ url_for('trending') }}">Trending on the internet</a></li>
+          <li><a href="{{ url_for('sentiment_analysis') }}">Sentiment Analysis</a></li>
+          <li><a href="{{ url_for('giveaway') }}">How Much Money MrBeast has Given Away</a></li>
+        </ul>
+      </nav>
+    </div>
+    {% block content %}{% endblock %}
+  </body>
+</html>

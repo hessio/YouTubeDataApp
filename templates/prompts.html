@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+</body>
+</html>
+<head>
+   <title>YouTube Data App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/prompts.css') }}">
+   <script src="{{url_for('static', filename='javascript/get_examples_from_word.js')}}"></script>
+   <script src="{{url_for('static', filename='javascript/get_examples_for_words.js')}}"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   <style type="text/css">
+    
+   </style>
+</head>
+<body>
+    <div class="topheader">
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('select_how_many_words') }}" aria-haspopup="true">Words that get views on YouTube<i class="arrow down"></i></a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="{{ url_for('most_common') }}">Most Common</a></li>
+              <li><a href="#">Most Viewed</a></li>
+              <li><a href="#">No gaming (Most viewed)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/channel/UC2vlF85wQqYfI8AeLrjOiPg" target="_blank">Watch my channel</a></li>
+          <li><a href="{{ url_for('thumbnail_data') }}">Thumbnail Data</a></li>
+          <li><a href="{{ url_for('trending') }}">Trending on the internet</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <form action="{{ url_for('select_how_many_words') }}" method="post">
+      <div class="list-choice">
+        <div class="list-choice-title">Number of Words</div>
+        <div class="list-choice-objects">
+          <label><input type="radio" name="count" value="5"/><span>5</span></label>
+          <label><input type="radio" name="count" value="10"/><span>10</span></label>
+          <label><input type="radio" name="count" value="15"/><span>15</span></label>
+          <label><input type="radio" name="count" value="20"/><span>20</span></label>
+          <label><input type="radio" name="count" value="25"/><span>25</span></label>
+        </div>
+        <input type="submit" value="Submit">
+      </div>
+      
+    </form>
+
+    <h3>Here are the most popular words from YouTube trending for the last 2 years.</br>Select between 5 and 25 from the drop down menu and hit submit to see that many random words</h3>
+    <h4>Struggling to come up with an idea for a word listed below?<br>Click the word to get some some video examples</h4>
+      <div class="words"> 
+        <ul class="list-items">
+          <section class="word-list">
+            {% for item in comm_words %}
+              <div class="post-word">
+                <div class='word-item'>
+                  <button onclick="postData('{{ item }}');" type="button" id="driver" class="word-button" value="{{ item }}"><tr> {{ item }}</tr></button>
+                </div>
+              </div>
+            {% endfor %}
+          </section>
+        </ul>
+      </div>
+      <div id="sconce">
+        
+      </div>
+      
+      <div class="silly" id="samples">
+        
+      </div>
+      
+
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+</body>
+</html>
+<head>
+   <title>My Video App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+    <div class="topheader">
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('select_how_many_words') }}" aria-haspopup="true">Words that get views on YouTube<i class="arrow down"></i></a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="{{ url_for('most_common') }}">Most Common</a></li>
+              <li><a href="#">Most Viewed</a></li>
+              <li><a href="#">No gaming (Most viewed)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/channel/UC2vlF85wQqYfI8AeLrjOiPg" target="_blank">Watch my channel</a></li>
+          <li><a href="{{ url_for('thumbnail_data') }}">Thumbnail Data</a></li>
+          <li><a href="{{ url_for('trending') }}">Trending on the internet</a></li>
+	  <li><a href="{{ url_for('sentiment_analysis') }}">Sentiment Analysis</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class='index-content'>
+    	<h1>YouTube Data Insights</h1>
+	</br>
+    </div>
+   <div class="first-half">
+    <div class="useful-notes-with-animation">
+      <div class="text-beside-im">
+	<div class='index-content'>
+          <p>Ever wondered what makes a great thumbnail on YouTube?</p>
+	  <div class='links'>
+            <div class='link-to-data'> 
+	      <a href="{{ url_for('thumbnail_data') }}">Learn how to make great thumbnails &#129054;</a>
+	    </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div style="padding-top: 0.6rem;">Some random thumbnails from the dataset</div>
+        
+		<div class="slideshow-container">
+	
+          	<div class="mySlides fade">
+        	    <img src="/static/images/0e3GPea1Tyg-faced.jpg" style="width:100%">
+          	</div>
+         	 <div class="mySlides fade">
+            		<img src="/static/images/_9N3kFyIXKU-faced.jpg" style="width:100%">
+          	</div>
+          	<div class="mySlides fade">
+            	<img src="/static/images/0SYKA00eFWY.jpg" style="width:100%">
+          	</div>  
+	</div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="second-half">
+    <div class="useful-notes-with-animation">
+      <div class="text-beside-im">
+        <div class='index-content'>
+          <p>Ever wondered what makes a great YouTube title?</p>
+          <div class='links'>
+            <div class='link-to-data'>
+              <a href="{{ url_for('select_how_many_words') }}">Learn how to make great titles &#129054;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside">
+        <div style="padding-top: 0.6rem;">Some random thumbnails from the dataset</div>
+
+                <div class="slideshow-container">
+
+                <div class="mySlides1 fade">
+                    <img src="/static/images/" style="width:100%">
+                </div>
+                 <div class="mySlides1 fade">
+                        <img src="/static/images/0T5Sula9F-8.jpg" style="width:100%">
+                </div>
+                <div class="mySlides1 fade">
+                <img src="/static/images/0SYKA00eFWY.jpg" style="width:100%">
+                </div>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot1"></span>
+          <span class="dot1"></span>
+          <span class="dot1"></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let slides_ = document.getElementsByClassName("mySlides1");
+        
+	let dots = document.getElementsByClassName("dot");
+        let dots_ = document.getElementsByClassName("dot1");
+	
+	for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          slides_[i].style.display = "none";
+        }
+        slideIndex++;
+
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+          dots_[i].className = dots_[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        slides_[slideIndex-1].style.display = "block";
+
+        dots[slideIndex-1].className += " active";
+        dots_[slideIndex-1].className += " active";
+        
+	setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+  </body>
+</html>

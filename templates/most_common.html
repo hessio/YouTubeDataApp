@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block link %}<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/most_common.css') }}">{% endblock %}
+{% block content %}
+<div class="word-clouds">
+   <h2>Word Cloud of Most Common Words in Outlier Videos</h2>
+     <div class='outliers-notes'>
+	<ol>
+		<li><h2>Interesting Trends That Help Grow Channels:</h2></li>
+		<li value="1">Trend-jacking or social hacking is the best way to grow</li>
+		<li>Answering questions (MythBusters) is one of the best ways to grow</li>
+		<li>Niche channels can often find great success with small amounts of money</li>
+		<li>Building something</li>
+		<li>Videos involving or about McDonald's</li>
+		<li>Reacting to things</li>
+		<li>Apple is the best tech brand to make videos about, no other tech brands appeared in this list</li>
+		<li>MrBeast is the best collab you can do on YouTube</li>
+		<li>Money helps a lot</li>
+	</ol>
+	<img src="/static/images/wordcloud_outliers.png" style="width:60%">
+      </div>
+
+	<h2>Word Cloud of Most Common Words on YouTube trending</h2>
+        <img src="/static/images/wordcloud_most_common_words.png" style="width:60%">
+	<h2>Word Cloud of Most Viewed Words on YouTube trending</h2>
+        <img src="/static/images/wordcloud_most_viewed_words.png" style="width:60%">
+</div>
+<h3>Ordered list of 300</h3>
+<div class="lists">
+  <div class="left">
+    <h2>most common words on YouTube trending</h2>
+    <ul class="words">
+	    {% for word in words %}
+	    	<li class="words-listed">{{ word }}</li>
+	    {% endfor %}
+    </ul>
+  </div>
+  <div class="no-gaming">
+    <h2>I Don't Game! (Most Viewed without Gaming)</h2>
+    <ul class="words">
+            {% for word in no_games %}
+                <li class="words-listed">{{ word }}</li>
+            {% endfor %}
+    </ul>
+  </div>
+  <div class="right">
+    <h2>most viewed words on YouTube trending</h2>
+    <ul class="words">
+            {% for word in viewed %}
+                <li class="words-listed">{{ word }}</li>
+            {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

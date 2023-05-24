@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+</body>
+</html>
+<head>
+   <title>My Video App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/sentiment.css') }}">
+</head>
+<body>
+    <div class="topheader">
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('select_how_many_words') }}" aria-haspopup="true">Words that get views on YouTube<i class="arrow down"></i></a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="{{ url_for('most_common') }}">Most Common</a></li>
+              <li><a href="#">Most Viewed</a></li>
+              <li><a href="#">No gaming (Most viewed)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/channel/UC2vlF85wQqYfI8AeLrjOiPg" target="_blank">Watch my channel</a></li>
+          <li><a href="{{ url_for('thumbnail_data') }}">Thumbnail Data</a></li>
+          <li><a href="{{ url_for('trending') }}">Trending on the internet</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h2>Is it better to be <span style="color:red;">Negative</span> or <span style="color:green;">Positive</span> on YouTube?</h2>
+    <div class="useful-notes-with-animation">
+        <div class="text-beside-im">
+         On average videos with a positive title get more views than those with a negative title 
+        </div>
+        <img src="/static/images/average_view_for_title_sentiment_bar_.png" style="width:65%; margin: 0px; padding: 0px;">
+    </div>
+    <div class="useful-notes-with-animation">
+        <div class="text-beside-im">
+          And when we get the average views for of the middle 50% of positive titled videos we can see that Positive titled videos get more views. This shows an average not including outliers so videos that get way more views than the rest or videos that get way less views than the rest.
+        </div>
+        <img src="/static/images/iqr_view_for_title_sentiment_bar_.png" style="width:65%; margin: 0px; padding: 0px;">
+    </div>
+    <div class="useful-notes-with-animation">
+        <div class="text-beside-im">
+          The median is the value in the middle when you sort all the values together in a list.
+        </div>
+        <img src="/static/images/median_view_for_title_sentiment_bar_.png" style="width:65%; margin: 0px; padding: 0px;">
+    </div>
+    <h2>More videos have&nbsp;<span style="color:green;">Positive</span>&nbsp;Titles than&nbsp;<span style="color:red;">Negative</span>&nbsp;titles</h2> 
+    <p class="sub-heading"><span style="background-color:#EDEDED;">Every year there was more positive titles than negative titles</span></p>
+    <div class="graphs-list">
+    	<div class="graphs">
+        	<img src='/static/images/2013_sentiment.jpg'/>
+    	</div>
+    	<div class="graphs">
+        	<img src="/static/images/2014_sentiment.jpg"/>
+    	</div>
+    	<div class="graphs">
+       		<img src='/static/images/2015_sentiment.jpg'/>
+    	</div>
+    	<div class="graphs">
+        	<img src="/static/images/2016_sentiment.jpg"/>
+    	</div>
+    	<div class="graphs">
+        	<img src='/static/images/2017_sentiment.jpg'/>
+    	</div>
+    	<div class="graphs">
+        	<img src="/static/images/2018_sentiment.jpg"/>
+    	</div>
+    	<div class="graphs">
+        	<img src='/static/images/2020_sentiment.jpg'/>
+    	</div>
+    	<div class="graphs">
+        	<img src="/static/images/2021_sentiment.jpg"/>
+    	</div>
+    	<div class="graphs">
+        	<img src='/static/images/2022_sentiment.jpg'/>
+    	</div>
+   </div>
+  
+  </body>
+</html>

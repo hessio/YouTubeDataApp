@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+  
+{% block link %}<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/trending.css') }}">{% endblock %}
+{% block content %}    
+<div class="top-section">
+      <h3>Below are the trending searches on google for {{ country }}</h3>
+      <form class="form-inline" method="POST" action="{{ url_for('trending') }}">
+        <div class="form-group">
+          <div class="input-group">
+              <span class="input-group-addon">Select a Country (defaults to the US):</span>
+              <select name="country_select" class="selectpicker form-control">
+                {% for o in countries %}
+                <option value="{{ o }}">{{ o }}</option>
+                {% endfor %}
+              </select>
+          </div>
+          <button type="submit" class="btn btn-default">Go</button>
+        </div>
+      </form>
+    </div>
+
+   <div class="searches">
+        {% for o in trending %}
+          <div id="list-elems">{{ o }}</div>
+        {% endfor %}    
+    </div>
+    {{ for trend in rt_trend }}
+    <div id="list-elems">{{ trend }}</div>
+    {% endfor %}
+{% endblock %}

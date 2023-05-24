@@ -1,0 +1,59 @@
+.searches{
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* fraction*/
+	padding-left:1rem;
+	padding-right:1rem;
+}
+#list-elems{
+	padding:30px;	
+	display:inline-block;
+	margin:5px;
+	border-radius:8px;
+	text-align:center;
+	background-color:#D7DDEB;
+}
+#list-elems:hover{
+	background-color:#D7DDEB;
+	cursor:pointer;
+}
+.top-section{
+	padding: 30px;
+	text-align:center;
+	font-weight: 100;
+	display: block;
+	overflow-y: hidden;
+}
+select{
+	box-shadow:0 0 15px 4px rgba(0,0,0,0.16);
+	border-radius: 6px;
+	border:none;
+	padding: 10px;
+	font-size: 15px;
+	font-weight: 700;
+
+}
+option{
+	box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 15px;
+	font-weight: 700;
+
+}
+span.input-group-addon{
+	font-weight: 500;
+	padding-right: 50px;
+}
+button.btn{
+	position: relative;
+	background-color: #5AA1D1;
+	border-radius: 5px;
+	font-size: 25px;
+	padding: 5px;
+	padding-right:10px; 
+	padding-left:10px;
+	color: white;
+	border-style: none;
+	margin-left: 22.5%;
+	margin-top: 3px;
+}

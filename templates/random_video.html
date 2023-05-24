@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+</body>
+</html>
+<head>
+   <title>My Video App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+    <div class="topheader">
+      <nav role="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#" aria-haspopup="true">Random Word Generator<i class="arrow down"></i></a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="#">Most Common</a></li>
+              <li><a href="#">Most Viewed</a></li>
+              <li><a href="#">No gaming (Most viewed)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/channel/UC2vlF85wQqYfI8AeLrjOiPg" target="_blank">Watch my channel</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <script src="{{url_for('static', filename='javascript/randomVideoGenerator.js')}}"></script>
+    <script>
+    </script>
+
+    <div id="outer">
+        <div class="inner"><button id="button" class="buttons" onclick="randomVideoFunction('rando')">Generate Random YouTube Video!</button></div>
+        <div class="inner"><button id="mrbbutton" class="buttons" onclick="randomVideoFunction('beast')" style="margin-left:1vw;">Generate Random MrBeast Video!</button></div>
+    </div>
+
+    <div class="grey-box">
+      
+      <div class="container">
+        <div class="video-container">
+          <iframe id='framed' src="https://www.youtube.com/embed/{{ youtube_id }}?autoplay=1&muted=1" frameborder="0" width="560" height="315" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div id="vbutton">
+        <button id="viralbutton" onclick="randomVideoFunction('viral')">Generate Random Viral Video!</button>
+    </div>
+  </body>
+</html>

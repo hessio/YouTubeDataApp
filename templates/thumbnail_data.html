@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+</body>
+</html>
+<head>
+   <title>My Video App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/thumbnail_data.css') }}">
+</head>
+<body>
+    <div class="topheader">
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('select_how_many_words') }}" aria-haspopup="true">Words that get views on YouTube<i class="arrow down"></i></a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="{{ url_for('most_common') }}">Most Common</a></li>
+              <li><a href="#">Most Viewed</a></li>
+              <li><a href="#">No gaming (Most viewed)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/channel/UC2vlF85wQqYfI8AeLrjOiPg" target="_blank">Watch my channel</a></li>
+          <li><a href="{{ url_for('thumbnail_data') }}">Thumbnail Data</a></li>
+          <li><a href="{{ url_for('trending') }}">Trending on the internet</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="top-section">
+      <h2>What are the most popular colors in YouTube thumbnails?</h2>
+      <p>Taking all the videos on YouTube trending over the last 2 years and getting the color of each pixel in every thumbnail (30,000 thumbnails)<br>gives us the results below. White is by far the most popular color used in thumbnails. Which makes a lot of sense because if you think about<br>it each pixel's color is represented by 3 values: Red, Green and Blue. Each color has a number from 0-255. To get awhite pixel you have a<br>value of 255 - Red, 255 - Green and 255 - Blue; or the maximum value of each color.</p>
+    </div>
+
+    <div class="useful-notes-with-animation">
+      <div class="notes">
+        <h2>Some useful things to note</h2>
+         <ol>
+            <li>Colors are bright and radiant</li>
+            <li>The wide variety of pink and yellow colors are skin colors</li>
+            <li>75% of users use dark mode so white constrasts with this well</li>
+            <li>This graph was created using 31,000 thumbnails from videos on YouTube trending over the last 2 years</li>
+          </ol>
+      </div>
+     
+      <div class="inside">
+        <div style="padding-top: 0.6rem;">Some random thumbnails from the dataset</div>
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <img src="/static/images/0SZq3EqyW-U.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="/static/images/0T5Sula9F-8.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="/static/images/0SYKA00eFWY.jpg" style="width:100%">
+          </div>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+      </div>
+    </div>
+
+   <div class="full-image-container">
+      <div class="thumbnail-pie-chart">
+        <div class="list">
+          <img src='/static/images/ColorsUsedInThumbs.png'/>
+        </div>
+        <div class="pie">
+          <img src="/static/images/total_pie_chart_of_colors.png"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="useful-notes-with-animation">
+      <div class="faces-count">
+          <img class="seaborn-graph" src="/static/images/average_view_count_for_number_of_faces_in_the_Thumbnail_bar_.jpg" style="width:100%;">
+      </div>
+      <div class="inside">
+        <div style="padding-top: 0.6rem;font-size: 2rem;">Some examples of what I mean</div>
+          <div class="slideshow-container">
+
+            <div class="mySlides1 fade">
+              <img src="/static/images/_9N3kFyIXKU-faced.jpg" style="width:100%">
+              <div class="text">Less than 10 Faces</div>
+            </div>
+
+            <div class="mySlides1 fade">
+              <img src="/static/images/_CYB2vyFpVQ-faced.jpg" style="width:100%">
+              <div class="text">Zero Faces</div>
+            </div>
+
+            <div class="mySlides1 fade">
+              <img src="/static/images/0e3GPea1Tyg-faced.jpg" style="width:100%">
+              <div class="text">More than 10 Faces</div>
+            </div>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot1"></span>
+            <span class="dot1"></span> 
+            <span class="dot1"></span>  
+          </div>
+        </div>
+      </div>
+
+      <div class="same-background">
+        <h2>Is there a correlation between the number of faces and the view count?</h2>
+        <div class="face-count-correlation">
+            <strong>Nope.</strong>
+        </div>
+        <div class="useful-notes-with-animation">
+          <div class="center-ims">
+            <img src="/static/images/face_count_and_views.jpg" style="width:50%">
+            <img src="/static/images/face_percentage_and_views.jpg" style="width:50%">
+          </div>
+        </div>
+      </div>
+      <div class="useful-notes-with-animation">
+        <div class="text-beside-im">
+          Having a face in a thumbnail gets more views on average.
+        </div>
+        <img src="/static/images/average_view_count_faces_vs_no_faces_bar_.png" style="width:40%; background-color: red; margin: 0px; padding: 0px;">
+      </div>
+      <div class="useful-notes-with-animation">
+        <div class="text-beside-im">
+          Even when we account for outliers (i.e. MrBeast).
+        </div>
+        <img src="/static/images/iqr.jpg" style="width:45%; margin: 0px; padding: 0px;">
+      </div>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let faced_slides = document.getElementsByClassName("mySlides1");
+        
+        let faced_dots = document.getElementsByClassName("dot1");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          faced_slides[i].style.display = "none";  
+        }
+        slideIndex++;
+
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+          faced_dots[i].className = faced_dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block"; 
+        faced_slides[slideIndex-1].style.display = "block"; 
+
+        dots[slideIndex-1].className += " active";
+        faced_dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+  </body>
+</html>

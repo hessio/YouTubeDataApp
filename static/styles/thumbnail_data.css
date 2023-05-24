@@ -1,0 +1,167 @@
+html,body{
+	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial","sans-serif";
+}
+.full-image-container{
+	background-color: white;
+	overflow: hidden;
+	margin: 0px;
+	padding-bottom: 20px;
+}
+.pie{
+	display: flex;
+	justify-content: center;
+	margin-left: -12vw;
+
+}
+.top-section{
+	background-color: #E2F3FF ;
+	padding: 50px;
+	margin: 0;
+}
+h3,h4,p, h2{
+	display: flex;
+	justify-content: center;
+}
+p{
+	font-weight: 500;
+	font-size: 1.15rem;
+	
+}
+ol{
+	color: black;
+	color: inherit;
+	display: block;
+	list-style-type: upper-greek;
+	/*list-style-position: inside;*/
+}
+
+ol li{
+	color: black;
+	display: block;
+	font-weight: 500;
+	padding: 0.0004rem;
+	font-weight: 500;
+	font-size: 1.15rem;
+	margin: 0.1rem;
+	display:list-item;
+
+}
+ol li:hover{
+	color: black;
+	display:list-item;
+	font-weight: 500;
+	text-decoration:none;
+	background-color: inherit;
+
+}
+.thumbnail-pie-chart{
+	display: flex;
+	justify-content: center;
+	background-color: #E2E2E2;
+	margin: 0px;
+}
+img{
+	padding: 20px;
+	width: 85%;
+  	height: auto;
+  	margin: 0;
+}
+.notes{
+	padding-left: 100px;
+	width: 60%;
+}
+
+.useful-notes-with-animation
+{
+	display: flex;
+	padding-bottom: 50px;
+
+}
+
+.inside{
+	display: grid;
+	grid-template: 1fr / 1fr;
+	width: 40%;
+	place-items: center;
+}
+.center-ims{
+	display: flex;
+	justify-content: center;
+}
+.same-background{
+	background-color: #C1C3C5;
+}
+.text-beside-im{
+	width: 50%;
+	/*text-align: center;*/
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	font-size: 30px;
+	font-weight: 500
+}
+* {box-sizing: border-box;}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  background-color: black;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: relative;
+  bottom: 18px;
+  
+  width: 94.5%;
+  left: 20px;
+  text-align: center;
+}
+.face-count-correlation{
+	width: 100%;
+	text-align: center;
+	font-size: 80px;
+	font-weight: 800;
+}
+/* Slideshow container */
+.slideshow-container {
+	width: 100%;
+	height: auto;
+	position: relative;
+	margin: 0;
+	
+	/*float: right;*/
+}
+/* The dots/bullets/indicators */
+.dot, .dot1 {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.active {
+	background-color: #717171;
+}
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.text {font-size: 11px}
+}
+.faces-count{
+	padding: 20px;
+	margin: 0px;
+	display: flex;
+}
+img.seaborn-graph{
+	padding: 0px;
+	margin: 0px;
+}

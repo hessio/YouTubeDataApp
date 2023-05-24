@@ -1,0 +1,90 @@
+.graphs{
+	display: inline-block;
+	padding:30px;
+	padding-left:90px;
+	text-align:center;
+}
+.graphs-list{
+	background-color:#F1F1F1;
+}
+h2{
+	text-align:center;
+}
+img{
+	padding:15px;
+}
+html,body{
+        font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial","sans-serif";
+}
+.full-image-container{
+        background-color: white;
+        overflow: hidden;
+        margin: 0px;
+        padding-bottom: 20px;
+}
+.pie{
+        display: flex;
+        justify-content: center;
+        margin-left: -12vw;
+
+}
+.top-section{
+        background-color: #E2F3FF ;
+        padding: 50px;
+        margin: 0;
+}
+.thumbnail-pie-chart{
+        display: flex;
+        justify-content: center;
+        background-color: #E2E2E2;
+        margin: 0px;
+}
+img{
+        padding: 20px;
+        width: 85%;
+        height: auto;
+        margin: 0;
+}
+.notes{
+        padding-left: 100px;
+        width: 60%;
+}
+
+.useful-notes-with-animation
+{
+        display: flex;
+        padding-bottom: 50px;
+
+}
+
+.inside{
+        display: grid;
+        grid-template: 1fr / 1fr;
+        width: 40%;
+        place-items: center;
+}
+.center-ims{
+        display: flex;
+        justify-content: center;
+}
+.same-background{
+        background-color: #C1C3C5;
+}
+.text-beside-im{
+        width: 50%;
+        /*text-align: center;*/
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+        font-size: 30px;
+        font-weight: 500;
+	padding-left:15px;
+	text-align:center;
+}
+.sub-heading{
+	text-align:center;
+	display:flex;
+	font-weight:500;
+	font-size:20px;
+	justify-content:center;
+}
